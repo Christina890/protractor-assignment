@@ -1,0 +1,195 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-11-13T06:06:13.785Z",
+    "end": "2021-11-13T06:06:19.348Z",
+    "duration": 5563,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a48aaccf-1705-4972-ae4a-00b1b216fefc",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f1cefacb-6519-46ed-9ee8-8e704d680ebc",
+          "title": "Users",
+          "fullFile": "/Users/christine.onyango/Documents/bb-interview-api/test/users.js",
+          "file": "/test/users.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login",
+              "fullTitle": "Users Login",
+              "timedOut": false,
+              "duration": 918,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const data = {\n  user: {\n    email: 'tinaonyango@gmail.com',\n    password: 'Password1*'\n  }\n};\nreturn request\n  .post('/users/login')\n  .send(data)\n  .then((res) => {\n    //console.log(res.body);\n    expect(res.status).to.equal(200);\n    expect(res.body.user.username).to.be.eq('hau');\n    expect(res.body).to.include.keys('user');\n  });",
+              "err": {},
+              "uuid": "6245e4c5-99a6-4e2d-a4df-88a904e4b64d",
+              "parentUUID": "f1cefacb-6519-46ed-9ee8-8e704d680ebc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Update User should be successful",
+              "fullTitle": "Users Update User should be successful",
+              "timedOut": false,
+              "duration": 677,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const data = {\n    user:{\n      email: 'tinaonyango@gmail.com',\n      bio: 'I like to skateboard',\n      image: 'https://i.stack.imgur.com/xHWG8.jpg'\n    }\n  };\nreturn request\n  .put('/user')\n  .set('jwtauthorization', 'Token ' + TOKEN)\n  .send(data)\n  .then((res) => {\n    console.log(res.body);\n    expect(res.status).to.equal(200);\n    expect(res.body.user.username).to.be.eq( 'hau');\n    expect(res.body).to.include.keys('user')\n    //console.log(res.body);\n  });",
+              "err": {},
+              "uuid": "fd0df31f-b00f-4744-b746-29904469baec",
+              "parentUUID": "f1cefacb-6519-46ed-9ee8-8e704d680ebc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Updating a user should require authorization",
+              "fullTitle": "Users Updating a user should require authorization",
+              "timedOut": false,
+              "duration": 1298,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const data = {\n    user:{\n      email: 'tinaonyango@gmail.com',\n      bio: 'I like to skateboard',\n      image: 'https://i.stack.imgur.com/xHWG8.jpg'\n    }\n  };\nreturn request\n  .put('/user')\n  .send(data)\n  .then((res) => {\n    //console.log(res.body);\n    expect(res.status).to.equal(401);\n  });",
+              "err": {},
+              "uuid": "5aae5dad-e94f-454b-a81e-8569b0dcfff3",
+              "parentUUID": "f1cefacb-6519-46ed-9ee8-8e704d680ebc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Registration should be successful ",
+              "fullTitle": "Users Registration should be successful ",
+              "timedOut": false,
+              "duration": 1116,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const data = {\n    user:{\n      username: 'hau99',\n      email: 'hallo@hallo.com',\n      password: 'Password1*'\n    }\n  };\nreturn request\n  .post('/users')\n  .set('jwtauthorization', 'Token ' + TOKEN)\n  .send(data)\n  .then((res) => {\n  //console.log(res.body);\n    expect(res.status).to.equal(422);\n  });",
+              "err": {},
+              "uuid": "7d103174-4250-408a-bde8-1b4566c53185",
+              "parentUUID": "f1cefacb-6519-46ed-9ee8-8e704d680ebc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Registration should validate email format",
+              "fullTitle": "Users Registration should validate email format",
+              "timedOut": false,
+              "duration": 703,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const data = {\n    user:{\n      username: 'hau99',\n      email: 'hau@hau',\n      password: 'Password1*'\n    }\n  };\nreturn request\n  .post('/users')\n  .set('jwtauthorization', 'Token ' + TOKEN)\n  .send(data)\n  .then((res) => {\n    //console.log(res.body);\n    expect(res.status).to.equal(422);\n  });",
+              "err": {},
+              "uuid": "cb12835c-da23-49c1-90dd-22df515e6376",
+              "parentUUID": "f1cefacb-6519-46ed-9ee8-8e704d680ebc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Delete Articles",
+              "fullTitle": "Users Delete Articles",
+              "timedOut": false,
+              "duration": 839,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "return request\n  .delete('DELETE articles/:bla-is-the-bla-of-bla-and-bla-w4yhpz')\n  .set('jwtauthorization', 'Token ' + TOKEN)\n  .then((res) => {\n    //console.log(res.body);\n    expect(res.status).to.equal(404);\n   \n  });",
+              "err": {},
+              "uuid": "a34e8a17-d781-4180-8489-a684a2bf3c90",
+              "parentUUID": "f1cefacb-6519-46ed-9ee8-8e704d680ebc",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6245e4c5-99a6-4e2d-a4df-88a904e4b64d",
+            "fd0df31f-b00f-4744-b746-29904469baec",
+            "5aae5dad-e94f-454b-a81e-8569b0dcfff3",
+            "7d103174-4250-408a-bde8-1b4566c53185",
+            "cb12835c-da23-49c1-90dd-22df515e6376",
+            "a34e8a17-d781-4180-8489-a684a2bf3c90"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5551,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 10000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 10000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "9.1.3"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.0.1"
+    }
+  }
+}

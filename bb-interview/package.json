@@ -1,0 +1,21 @@
+{
+  "name": "bb-interview",
+  "version": "1.0.0",
+  "description": "My Interview Project",
+  "main": "index.js",
+  "dependencies": {
+    "authenticator-browser-extension": "^1.4.11",
+    "jasmine-data-provider": "^2.2.0",
+    "jasmine-spec-reporter": "^7.0.0",
+    "protractor-html-reporter-2": "^1.0.4",
+    "protractor-jasmine2-html-reporter": "0.0.7"
+  },
+  "devDependencies": {
+    "jasmine-reporters": "^2.5.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,35 @@
+{
+    "baseUrl" : "https://qa-task.backbasecloud.com",
+    "Username": "christine",
+    "Password": "Password1*",
+    "Email":"tinaonyango@gmail.com",
+    
+        "user1":{
+          "username": "apondi26",
+          "email": "tina@tina.com26",
+          "password": "Password1*"
+        
+      },
+      
+      "user2":{
+        "username": "apondi1",
+        "email": "tina@tina.com1",
+        "password": "Password1*"
+      
+    },
+    
+        "user3":{
+          "username": "apondi2",
+          "email": "tina@tina.com1",
+          "password": "Password1*"
+        
+      },
+      
+        "invalidEmail":{
+          "username": "apondi3",
+          "email": "tina@tina",
+          "password": "Password1*"
+        }
+
+
+ }
