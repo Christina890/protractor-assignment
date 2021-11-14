@@ -45,10 +45,6 @@ Automatic reports can be found in bb-interview-api/mochawesome-report
 ###Executing program
 ```npm test```
 
-## Help
 
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
 
 
