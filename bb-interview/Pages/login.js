@@ -7,7 +7,7 @@ let loginPage = function () {
   );
   let signin = element(by.cssContainingText(".nav-link", " Sign in"));
   let loginError = element(by.className("error-messages"));
-  let getProfile = element(by.cssContainingText(".nav-link", "christine"));
+  let getProfile = element(by.cssContainingText(".nav-link", "apondi26"));
 
   //baseURL
   this.get = function (url) {
